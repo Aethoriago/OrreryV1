@@ -137,3 +137,6 @@ ErisOP = 557.2
 ErisMe = 0.00278
 print("Eris")
 Eris = print(Planets % (ErisSmA,ErisEcc,ErisOP,(ErisOP*YrS),(ErisMe*Me)))
+
+#wait function
+input()
