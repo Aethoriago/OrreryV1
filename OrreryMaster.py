@@ -112,4 +112,7 @@ print("Epoch")
 print(Epoch)
 
 #wait function
+
 input()
+
+# Fix code not persisting in terminal. Also time function is bork.
