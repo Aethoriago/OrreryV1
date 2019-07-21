@@ -12,8 +12,25 @@
 #https://technology.nasa.gov/patent/NPO-TOPS-26
 #
 ###
+
 import time
 
+p_dict = {
+    #'Planet' : [SmA, Ecc, OP, Me],
+    'Mercury': [0,0.3870993, 0.20564, 0.2408467, 0.05527],
+    'Venus' : [0,0.023336, 0.00678, 0.61519726, 0.81500],
+    'Earth' : [0,1.000003, 0.01671, 1.0000174, 1.0000],
+    'Mars' : [0,1.52371, 0.09339, 1.8808158, 0.10745],
+    'Jupiter' : [0,5.2029, 0.0484, 11.862615, 317.83],
+    'Saturn' : [0,9.537, 0.0539, 29.447498, 95.159],
+    'Uranus' : [0,19.189, 0.04726, 84.016846, 14.5],
+    'Neptune' : [0,30.0699, 0.00859, 164.79132, 17.204],
+    'Ceres' : [0,2.7658, 0.078, 4.59984, 0.00016],
+    'Pluto' : [0,39.4821, 0.24883, 248.0208, 0.00220],
+    'Haumea' : [0,43.34, 0.189, 285.4, 0.00070],
+    'Makemake' : [0,45.79, 0.159, 309.9, 0.0007],
+    'Eris' : [0,67.67, 0.44177, 557.2, 0.00278]
+}
 
 Ex = 1
 
@@ -24,119 +41,70 @@ Me = 5974200000000000000000000
     #Note that Me is Mass relative to Earth Mass I.E 1Me = same mass as Earth. The string output is the actual mass however.
 Epoch = time.gmtime(time.time())
 
-#Planets
-Planets = "| SemimajorAxis: %r AU | Eccentricity: %r | Orbital Period: %r Years(%r Years in Seconds) | Mass: %r |"
+
+Planets = "| SemimajorAxis: %r AU | Eccentricity: %r | Orbital Period: %r Years(%r Years in Seconds) | Mass(kg): %r |"
+
+
 
 print("Planets")
+print("")
 
-#Mercury
-MercurySmA = 0.3870993
-MercuryEcc = 0.20564
-MercuryOP = 0.2408467
-MercuryMe = 0.05527
 print("Mercury:")
-Mercury = print(Planets % (MercurySmA,MercuryEcc,MercuryOP,(MercuryOP*YrS),(MercuryMe*Me)))
+print(Planets % (p_dict['Mercury'][1],p_dict['Mercury'][2],p_dict['Mercury'][3],(p_dict['Mercury'][3]*YrS),(p_dict['Mercury'][4]*Me)))
+print("")
 
-#Venus
-VenusSmA = 0.023336
-VenusEcc = 0.00678
-VenusOP = 0.61519726
-VenusMe = 0.81500
 print("Venus:")
-Venus = print(Planets % (VenusSmA,VenusEcc,VenusOP,(VenusOP*YrS),(VenusMe*Me)))
+print(Planets % (p_dict['Venus'][1],p_dict['Venus'][2],p_dict['Venus'][3],(p_dict['Venus'][3]*YrS),(p_dict['Venus'][4]*Me)))
+print("")
 
-#Earth
-EarthSmA = 1.000003
-EarthEcc = 0.01671
-EarthOP = 1.0000174
-EarthMe = 1.0000
 print("Earth:")
-Earth = print(Planets % (EarthSmA,EarthEcc,EarthOP,(EarthOP*YrS),(EarthMe*Me)))
+print(Planets % (p_dict['Earth'][1],p_dict['Earth'][2]],p_dict['Earth'][3],(p_dict['Earth'][3]*YrS),(p_dict['Earth'][4]*Me)))
+print("")
 
-#Mars
-MarsSmA = 1.52371
-MarsEcc = 0.09339
-MarsOP = 1.8808158
-MarsMe = 0.10745
 print("Mars")
-Mars = print(Planets % (MarsSmA,MarsEcc,MarsOP,(MarsOP*YrS),(MarsMe*Me)))
+print(Planets % (p_dict['Mars'][1],p_dict['Mars'][2],p_dict['Mars'][3],(p_dict['Mars'][3]*YrS),(p_dict['Mars'][4]*Me)))
+print("")
 
-#Jupiter
-JupiterSmA = 5.2029
-JupiterEcc = 0.0484
-JupiterOP = 11.862615
-JupiterMe = 317.83
 print("Jupiter:")
-Jupiter = print(Planets % (JupiterSmA,JupiterEcc,JupiterOP,(JupiterOP*YrS),(JupiterMe*Me)))
+print(Planets % (p_dict['Jupiter'][1],p_dict['Jupiter'][2],p_dict['Jupiter'][3],(p_dict['Jupiter'][3]*YrS),(p_dict['Jupiter'][4]*Me)))
+print("")
 
-#Saturn
-SaturnSmA = 9.537
-SaturnEcc = 0.0539
-SaturnOP = 29.447498
-SaturnMe = 95.159
 print("Saturn:")
-Saturn = print(Planets % (SaturnSmA,SaturnEcc,SaturnOP,(SaturnOP*YrS),(SaturnMe*Me)))
+print(Planets % (p_dict['Saturn'][1],p_dict['Saturn'][2],p_dict['Saturn'][3],(p_dict['Saturn'][3]*YrS),(p_dict['Saturn'][4]*Me)))
+print("")
 
-#Uranus
-UranusSmA = 19.189
-UranusEcc = 0.04726
-UranusOP = 84.016846
-UranusMe = 14.5
 print("Uranus:")
-Uranus = print(Planets % (UranusSmA,UranusEcc,UranusOP,(UranusOP*YrS),(UranusMe*Me)))
+print(Planets % (p_dict['Uranus'][1],p_dict['Uranus'][2],p_dict['Uranus'][3],(p_dict['Uranus'][3]*YrS),(p_dict['Uranus'][4]*Me)))
+print("")
 
-#Neptune
-NeptuneSmA = 30.0699
-NeptuneEcc = 0.00859
-NeptuneOP = 164.79132
-NeptuneMe = 17.204
 print("Neptune:")
-Neptune = print(Planets % (NeptuneSmA,NeptuneEcc,NeptuneOP,(NeptuneOP*YrS),(NeptuneMe*Me)))
+print(Planets % (p_dict['Neptune'][1],p_dict['Neptune'][2],p_dict['Neptune'][3],(p_dict['Neptune'][3]*YrS),(p_dict['Neptune'][4]*Me)))
+print("")
 
 print("Dwarf Planets")
+print("")
 
-#Ceres
-CeresSmA = 2.7658
-CeresEcc = 0.078
-CeresOP = 4.59984
-CeresMe = 0.00016
 print("Ceres:")
-Ceres = print(Planets % (CeresSmA,CeresEcc,CeresOP,(CeresOP*YrS),(CeresMe*Me)))
+print(Planets % (p_dict['Ceres'][1],p_dict['Ceres'][2],p_dict['Ceres'][3],(p_dict['Ceres'][3]*YrS),(p_dict['Ceres'][4]*Me)))
 
 print("Plutoids")
+print("")
 
-
-#Pluto
-PlutoSmA = 39.4821
-PlutoEcc = 0.24883
-PlutoOP = 2480208
-PlutoMe = 0.00220
 print("Pluto")
-Pluto = print(Planets % (PlutoSmA,PlutoEcc,PlutoOP,(PlutoOP*YrS),(PlutoMe*Me)))
+print(Planets % (p_dict['Pluto'][1],p_dict['Pluto'][2],p_dict['Pluto'][3],(p_dict['Pluto'][3]*YrS),(p_dict['Pluto'][4]*Me)))
+print("")
 
-#Haumea
-HaumeaSmA = 43.34
-HaumeaEcc = 0.189
-HaumeaOP = 285.4
-HaumeaMe = 0.00070
 print("Haumea")
-Haumea = print(Planets % (HaumeaSmA,HaumeaEcc,HaumeaOP,(HaumeaOP*YrS),(HaumeaMe*Me)))
+print(Planets % (p_dict['Haumea'][1],p_dict['Haumea'][2],p_dict['Haumea'][3],(p_dict['Haumea'][3]*YrS),(p_dict['Haumea'][4]*Me)))
+print("")
 
-#Makemake
-MakemakeSmA = 45.79
-MakemakeEcc = 0.159
-MakemakeOP = 309.9
-MakemakeMe = 0.0007
 print("Makemake")
-Makemake = print(Planets % (MakemakeSmA,MakemakeEcc,MakemakeOP,(MakemakeOP*YrS),(MakemakeMe*Me)))
+print(Planets % (p_dict['Makemake'][1],p_dict['Makemake'][2],p_dict['Makemake'][3],(p_dict['Makemake'][3]*YrS),(p_dict['Makemake'][4]*Me)))
+print("")
 
-#Eris
-ErisSmA = 67.67
-ErisEcc = 0.44177
-ErisOP = 557.2
-ErisMe = 0.00278
 print("Eris")
-Eris = print(Planets % (ErisSmA,ErisEcc,ErisOP,(ErisOP*YrS),(ErisMe*Me)))
+print(Planets % (p_dict['Eris'][1],p_dict['Eris'][2],p_dict['Eris'][3],(p_dict['Eris'][3]*YrS),(p_dict['Eris'][4]*Me)))
+print("")
 
 #wait function
 input()
